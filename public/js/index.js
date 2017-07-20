@@ -3,10 +3,6 @@
       socket.on('connect', function () {
         console.log('Connected to Server');
 
-        socket.emit('createMessage', {
-          from: 'bin@example.com',
-          text: 'that works.'
-        });
       });
       socket.on('disconnect', function () {
         console.log('Disconnected from Server');
