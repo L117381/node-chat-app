@@ -27,16 +27,14 @@ socket.broadcast.emit('newMessage', {
   text: 'New user Joined',
   createAt: new Date().getTime()
 })
-  socket.on('createMessage', (message) =>{
-
+  socket.on('createMessage', (message, callback) =>{
     console.log('createMessage', message);
     io.emit('newMessage' , {
       from: message.from,
       text: message.text,
       createAt: new Date().getTime()
-
-
     });
+    callback('This is from the serever');
     // socket.broadcast.emit('newMessage', {
     //   from: message.from,
     //   text: message.text,
